@@ -1,1 +1,5 @@
 <h2>Profile: <%= @band.name %></h2>
+
+<%= button_to "Edit band!", edit_band_url(@band), method: :patch %>
+
+<%= button_to "Delete band!", band_url(@band), method: :delete %>
