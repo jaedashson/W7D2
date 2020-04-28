@@ -4,19 +4,19 @@
 
 header {
   display: flex;
-  /* align-items: center; */
-  /* justify-content: space-between; */
+  align-items: center;
+  justify-content: space-between;
 }
 
 .sign_buttons {
-  display: flex;
+  /* display: flex; */
   justify-content: right;
-  font-family: 'Courier New', Courier, monospace
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
 .music_app {
-  display: flex;
+  /* display: flex; */
   justify-content: center;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  font-size: 100;
+  font-size: 100px;
 }
