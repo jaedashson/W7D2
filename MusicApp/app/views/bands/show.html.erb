@@ -1,5 +1,22 @@
-<h2>Profile: <%= @band.name %></h2>
+<h2>Band profile: <%= @band.name %></h2>
 
-<%= button_to "Edit band!", edit_band_url(@band), method: :patch %>
+<a href="<%= edit_band_url(@band) %>">Edit band!</a>
+<!--I think the error is here vvvvv-->
+<!--<a href="<%#= new_band_album_url(@band) %>">Add album!<a>-->
 
-<%= button_to "Delete band!", band_url(@band), method: :delete %>
+<br>
+
+<ol>
+  <!--How to order albums by year?-->
+  <% @band.albums.each do |album| %>
+    <li><%=album.name%></li>
+  <% end %>
+</ol>
+
+<br>
+
+<form action="<%= band_url(@band) %>" method="post">
+  <%= auth_token %>
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete band!">
+</form>

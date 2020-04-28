@@ -1,0 +1,41 @@
+<!--local variables: album, bands, band, edit-->
+
+<% if edit == true %>
+  <% action_url = album_url(album) %>
+  <% submit_val = "Update album" %>
+<% else %>
+  <% action_url = albums_url %>
+  <% submit_val = "Create album" %>
+<% end %>
+
+<form action="<%= action_url %>" method="post">
+  <%= auth_token %>
+
+  <% if edit %>
+    <input type="hidden" name="_method" value="patch">
+  <% end %>
+
+  <label for="title">Album title</label>
+  <input type="text" name="album[title]" id="title" value="<%= album.title %>">
+
+  <br>
+
+  <label for="year">Year</label>
+  <input type="text" name="album[year]" id="year" value="<%= album.year %>">
+
+  <br>
+
+  <select name="album[band_id]">
+    <option disabled <%= edit== true ? "" : "selected" %>>Select band</option>
+
+    <% bands.each do |select_band| %>
+      <option value="<%= select_band.id %>" <%= select_band.id == band.id ? "selected" : "" %>><%= select_band.name %></option>
+    <% end %>  
+  </select>
+
+  <label for="studio">Studio</label>
+  <input type="radio" name="album[live]" id="studio" value="false" checked="<%= band.live ? false : true %>">
+  <br>
+  <label for="live">Live</label>
+  <input type="radio" name="album[live]" id="live" value="true" checked="<%= band.live? true : false %>">
+</form>

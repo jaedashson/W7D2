@@ -6,4 +6,10 @@ Rails.application.routes.draw do
   root to: 'sessions#new'
 
   resources :bands
+
+  resources :bands do
+    resources :albums, only: [:index, :new]
+  end
+
+  resources :albums, except: [:index, :show]
 end
