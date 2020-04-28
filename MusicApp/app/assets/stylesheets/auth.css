@@ -1,0 +1,22 @@
+.auth_form {
+  font-family: 'Courier New', Courier, monospace
+}
+
+header {
+  display: flex;
+  /* align-items: center; */
+  /* justify-content: space-between; */
+}
+
+.sign_buttons {
+  display: flex;
+  justify-content: right;
+  font-family: 'Courier New', Courier, monospace
+}
+
+.music_app {
+  display: flex;
+  justify-content: center;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 100;
+}
